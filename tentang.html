@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentang Kami — Tani Baru Mandiri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" href="static/images/TBM_Logo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+
+  <!-- MOBILE DRAWER OVERLAY -->
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="nav-brand">
+        <img src="static/images/TBM_Logo.png" alt="Tani Baru Mandiri" />
+        <span class="nav-brand-name">Tani Baru Mandiri</span>
+      </div>
+      <button class="drawer-close" onclick="closeMobileMenu()" aria-label="Tutup">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <nav class="drawer-nav">
+      <a class="drawer-link" href="index.html" onclick="closeMobileMenu()">Beranda</a>
+
+      <div class="drawer-section">
+        <button class="drawer-link drawer-kategori-toggle" onclick="toggleDrawerKategori(this)">
+          Kategori
+          <svg class="chevron" width="14" height="14" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="drawer-kategori-list" id="drawerKategoriList">
+          <a class="drawer-sub-link" href="index.html#semua-produk" onclick="closeMobileMenu()">Semua Produk</a>
+          <a class="drawer-sub-link" href="index.html#semua-produk" onclick="closeMobileMenu()">Bibit</a>
+          <a class="drawer-sub-link" href="index.html#semua-produk" onclick="closeMobileMenu()">Pupuk</a>
+          <a class="drawer-sub-link" href="index.html#semua-produk" onclick="closeMobileMenu()">Fungisida</a>
+          <a class="drawer-sub-link" href="index.html#semua-produk" onclick="closeMobileMenu()">Herbisida</a>
+          <a class="drawer-sub-link" href="index.html#semua-produk" onclick="closeMobileMenu()">Insektisida</a>
+          <a class="drawer-sub-link" href="index.html#semua-produk" onclick="closeMobileMenu()">Nutrisi Tanaman / Makmur Abadi</a>
+          <a class="drawer-sub-link" href="index.html#semua-produk" onclick="closeMobileMenu()">Alat Pertanian</a>
+        </div>
+      </div>
+
+      <a class="drawer-link" href="tentang.html" onclick="closeMobileMenu()">Tentang Kami</a>
+      <a class="drawer-link" href="kontak.html" onclick="closeMobileMenu()">Kontak</a>
+    </nav>
+
+    <div class="drawer-search">
+      <input type="text" placeholder="Cari produk" />
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-brand">
+      <a href="index.html" style="display:flex;align-items:center;gap:0.65rem;text-decoration:none;">
+        <img src="static/images/TBM_Logo.png" alt="Tani Baru Mandiri" />
+        <span class="nav-brand-name">Tani Baru Mandiri</span>
+      </a>
+    </div>
+    <div class="nav-divider-v"></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li class="nav-item-dropdown">
+        <a href="#" class="nav-dropdown-trigger" id="kategoriTrigger">
+          Kategori
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown-menu" id="kategoriMenu">
+          <a href="index.html#semua-produk" class="dropdown-item">Semua Produk</a>
+          <a href="index.html#semua-produk" class="dropdown-item">Bibit</a>
+          <a href="index.html#semua-produk" class="dropdown-item">Pupuk</a>
+          <a href="index.html#semua-produk" class="dropdown-item">Fungisida</a>
+          <a href="index.html#semua-produk" class="dropdown-item">Herbisida</a>
+          <a href="index.html#semua-produk" class="dropdown-item">Insektisida</a>
+          <a href="index.html#semua-produk" class="dropdown-item">Nutrisi Tanaman / Makmur Abadi</a>
+          <a href="index.html#semua-produk" class="dropdown-item">Alat Pertanian</a>
+        </div>
+      </li>
+      <li><a href="tentang.html" class="active">Tentang Kami</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" aria-label="Akun">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 17c0-3.314 3.134-6 7-6s7 2.686 7 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu" onclick="openMobileMenu()">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- TENTANG KAMI -->
+  <section class="tentang">
+    <div class="tentang-inner">
+
+      <div class="tentang-intro">
+        <div class="section-lined-title">Tentang Kami</div>
+        <p>Tani Baru Mandiri adalah toko penyedia kebutuhan pertanian yang menyediakan berbagai produk seperti bibit, pupuk, herbisida, fungisida, insektisida, dan perlengkapan pertanian lainnya.</p>
+        <p>Kami hadir untuk membantu petani mendapatkan produk pertanian yang berkualitas, terpercaya, dan sesuai dengan kebutuhan lahan mereka.</p>
+      </div>
+
+      <div class="tentang-grid">
+
+        <div class="tentang-card">
+          <h3>Produk yang Kami Sediakan</h3>
+          <ul>
+            <li>Bibit pertanian</li>
+            <li>Pupuk</li>
+            <li>Fungisida</li>
+            <li>Herbisida</li>
+            <li>Insektisida</li>
+            <li>Produk perawatan tanaman</li>
+            <li>Perlengkapan pertanian lainnya</li>
+          </ul>
+        </div>
+
+        <div class="tentang-card">
+          <h3>Mengapa Memilih Kami?</h3>
+          <ul>
+            <li>Produk pertanian lengkap</li>
+            <li>Kualitas produk terpercaya</li>
+            <li>Melayani kebutuhan petani dengan ramah</li>
+            <li>Membantu pelanggan memilih produk yang sesuai</li>
+            <li>Tersedia berbagai merek pertanian populer</li>
+          </ul>
+        </div>
+
+        <div class="tentang-card tentang-visi-misi">
+          <div>
+            <h3>Visi</h3>
+            <p>Menjadi toko pertanian terpercaya yang membantu petani mendapatkan hasil terbaik.</p>
+          </div>
+          <div>
+            <h3>Misi</h3>
+            <p>Menyediakan produk berkualitas, pelayanan yang baik, dan solusi yang sesuai untuk kebutuhan pertanian pelanggan.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="tentang-closing">Kami berkomitmen untuk menjadi pilihan terpercaya bagi petani dalam memenuhi kebutuhan pertanian sehari-hari.</p>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="kontak">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="static/images/TBM_Logo.png" alt="Tani Baru Mandiri" />
+          <span>Tani Baru Mandiri</span>
+        </div>
+        <p>Toko kebutuhan pertanian yang menyediakan pestisida, pupuk, benih, dan perlengkapan pertanian.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <ul>
+          <li>WhatsApp: 0812 4151 4141</li>
+          <li>Email: tanibarumandiri@gmail.com</li>
+          <li>Alamat: Jl. Trans Sulawesi, Hunggaluwa, Limboto, Gorontalo</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Jam Operasional</h4>
+        <ul>
+          <li>Senin – Sabtu: 08.00 – 17.00</li>
+          <li>Minggu: Tutup</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Metode Pembayaran</h4>
+        <ul>
+          <li>Virtual Account (VA)</li>
+          <li>GoPay</li>
+          <li>OVO</li>
+          <li>QRIS</li>
+          <li>Transfer Bank</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function openMobileMenu() {
+      document.getElementById('mobileDrawer').classList.add('open');
+      document.getElementById('mobileOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      document.getElementById('mobileDrawer').classList.remove('open');
+      document.getElementById('mobileOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function toggleDrawerKategori(btn) {
+      const list = document.getElementById('drawerKategoriList');
+      const chevron = btn.querySelector('.chevron');
+      const isOpen = list.classList.toggle('open');
+      chevron.style.transform = isOpen ? 'rotate(180deg)' : '';
+    }
+
+    const trigger = document.getElementById('kategoriTrigger');
+    const menu = document.getElementById('kategoriMenu');
+    trigger.addEventListener('click', e => {
+      e.preventDefault();
+      menu.classList.toggle('open');
+    });
+    document.addEventListener('click', e => {
+      if (!trigger.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('open');
+      }
+    });
+  </script>
+
+</body>
+</html>

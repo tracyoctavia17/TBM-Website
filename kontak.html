@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontak — Tani Baru Mandiri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" href="static/images/TBM_Logo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+
+  <!-- MOBILE DRAWER OVERLAY -->
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="nav-brand">
+        <img src="static/images/TBM_Logo.png" alt="Tani Baru Mandiri" />
+        <span class="nav-brand-name">Tani Baru Mandiri</span>
+      </div>
+      <button class="drawer-close" onclick="closeMobileMenu()" aria-label="Tutup">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <nav class="drawer-nav">
+      <a class="drawer-link" href="index.html" onclick="closeMobileMenu()">Beranda</a>
+
+      <div class="drawer-section">
+        <button class="drawer-link drawer-kategori-toggle" onclick="toggleDrawerKategori(this)">
+          Kategori
+          <svg class="chevron" width="14" height="14" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="drawer-kategori-list" id="drawerKategoriList">
+          <a class="drawer-sub-link" href="index.html#semua-produk" onclick="closeMobileMenu()">Semua Produk</a>
+          <a class="drawer-sub-link" href="index.html#semua-produk" onclick="closeMobileMenu()">Bibit</a>
+          <a class="drawer-sub-link" href="index.html#semua-produk" onclick="closeMobileMenu()">Pupuk</a>
+          <a class="drawer-sub-link" href="index.html#semua-produk" onclick="closeMobileMenu()">Fungisida</a>
+          <a class="drawer-sub-link" href="index.html#semua-produk" onclick="closeMobileMenu()">Herbisida</a>
+          <a class="drawer-sub-link" href="index.html#semua-produk" onclick="closeMobileMenu()">Insektisida</a>
+          <a class="drawer-sub-link" href="index.html#semua-produk" onclick="closeMobileMenu()">Nutrisi Tanaman / Makmur Abadi</a>
+          <a class="drawer-sub-link" href="index.html#semua-produk" onclick="closeMobileMenu()">Alat Pertanian</a>
+        </div>
+      </div>
+
+      <a class="drawer-link" href="tentang.html" onclick="closeMobileMenu()">Tentang Kami</a>
+      <a class="drawer-link" href="kontak.html" onclick="closeMobileMenu()">Kontak</a>
+    </nav>
+
+    <div class="drawer-search">
+      <input type="text" placeholder="Cari produk" />
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-brand">
+      <a href="index.html" style="display:flex;align-items:center;gap:0.65rem;text-decoration:none;">
+        <img src="static/images/TBM_Logo.png" alt="Tani Baru Mandiri" />
+        <span class="nav-brand-name">Tani Baru Mandiri</span>
+      </a>
+    </div>
+    <div class="nav-divider-v"></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li class="nav-item-dropdown">
+        <a href="#" class="nav-dropdown-trigger" id="kategoriTrigger">
+          Kategori
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown-menu" id="kategoriMenu">
+          <a href="index.html#semua-produk" class="dropdown-item">Semua Produk</a>
+          <a href="index.html#semua-produk" class="dropdown-item">Bibit</a>
+          <a href="index.html#semua-produk" class="dropdown-item">Pupuk</a>
+          <a href="index.html#semua-produk" class="dropdown-item">Fungisida</a>
+          <a href="index.html#semua-produk" class="dropdown-item">Herbisida</a>
+          <a href="index.html#semua-produk" class="dropdown-item">Insektisida</a>
+          <a href="index.html#semua-produk" class="dropdown-item">Nutrisi Tanaman / Makmur Abadi</a>
+          <a href="index.html#semua-produk" class="dropdown-item">Alat Pertanian</a>
+        </div>
+      </li>
+      <li><a href="tentang.html">Tentang Kami</a></li>
+      <li><a href="kontak.html" class="active">Kontak</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" aria-label="Akun">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 17c0-3.314 3.134-6 7-6s7 2.686 7 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu" onclick="openMobileMenu()">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- KONTAK -->
+  <section class="kontak-page">
+    <div class="kontak-inner">
+
+      <div class="section-lined-title">Kontak Kami</div>
+      <p class="kontak-subtitle">Tani Baru Mandiri siap membantu Anda menemukan kebutuhan pertanian yang sesuai.</p>
+
+      <div class="kontak-layout">
+
+        <!-- LEFT: contact details -->
+        <div class="kontak-details">
+          <div class="kontak-info-block">
+            <div class="kontak-info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="currentColor"/></svg>
+            </div>
+            <div>
+              <p class="kontak-info-label">Alamat</p>
+              <p class="kontak-info-value">Jl. Trans Sulawesi, Hunggaluwa, Limboto, Gorontalo</p>
+            </div>
+          </div>
+
+          <div class="kontak-info-block">
+            <div class="kontak-info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z" fill="currentColor"/></svg>
+            </div>
+            <div>
+              <p class="kontak-info-label">WhatsApp</p>
+              <p class="kontak-info-value">0812 4151 4141</p>
+            </div>
+          </div>
+
+          <div class="kontak-info-block">
+            <div class="kontak-info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/></svg>
+            </div>
+            <div>
+              <p class="kontak-info-label">Email</p>
+              <p class="kontak-info-value">tanibarumandiri@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="kontak-info-block">
+            <div class="kontak-info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/></svg>
+            </div>
+            <div>
+              <p class="kontak-info-label">Jam Operasional</p>
+              <p class="kontak-info-value">Senin – Sabtu: 08.00 – 17.00</p>
+              <p class="kontak-info-value">Minggu: Tutup</p>
+            </div>
+          </div>
+
+          <div class="kontak-buttons">
+            <a href="https://wa.me/6281241514141" target="_blank" class="btn-wa">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="currentColor"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.215a.75.75 0 0 0 .922.899l5.556-1.717A11.942 11.942 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.028-1.383l-.36-.214-3.733 1.154 1.104-3.64-.234-.374A9.818 9.818 0 1 1 12 21.818z" fill="currentColor"/></svg>
+              Hubungi via WhatsApp
+            </a>
+            <a href="https://maps.google.com/?q=Tani+Baru+Mandiri+Limboto+Gorontalo" target="_blank" class="btn-maps">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="currentColor"/></svg>
+              Lihat Lokasi di Google Maps
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Google Maps embed -->
+        <div class="kontak-map">
+          <iframe
+            src="https://maps.google.com/maps?q=Tani+Baru+Mandiri+Limboto+Gorontalo&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lokasi Tani Baru Mandiri">
+          </iframe>
+        </div>
+
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div class="kontak-form-wrap">
+        <h3>Kirim Pesan</h3>
+        <p>Untuk pemesanan, pertanyaan produk, atau ketersediaan stok, silakan hubungi kami melalui WhatsApp atau isi form di bawah ini.</p>
+        <form class="kontak-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" name="nama" placeholder="Nama Anda" required />
+          </div>
+          <div class="form-group">
+            <label for="pesan">Pesan</label>
+            <textarea id="pesan" name="pesan" rows="4" placeholder="Tulis pesan atau pertanyaan Anda di sini..." required></textarea>
+          </div>
+          <button type="submit" class="btn-kirim">Kirim Pesan</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="static/images/TBM_Logo.png" alt="Tani Baru Mandiri" />
+          <span>Tani Baru Mandiri</span>
+        </div>
+        <p>Toko kebutuhan pertanian yang menyediakan pestisida, pupuk, benih, dan perlengkapan pertanian.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <ul>
+          <li>WhatsApp: 0812 4151 4141</li>
+          <li>Email: tanibarumandiri@gmail.com</li>
+          <li>Alamat: Jl. Trans Sulawesi, Hunggaluwa, Limboto, Gorontalo</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Jam Operasional</h4>
+        <ul>
+          <li>Senin – Sabtu: 08.00 – 17.00</li>
+          <li>Minggu: Tutup</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Metode Pembayaran</h4>
+        <ul>
+          <li>Virtual Account (VA)</li>
+          <li>GoPay</li>
+          <li>OVO</li>
+          <li>QRIS</li>
+          <li>Transfer Bank</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function openMobileMenu() {
+      document.getElementById('mobileDrawer').classList.add('open');
+      document.getElementById('mobileOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      document.getElementById('mobileDrawer').classList.remove('open');
+      document.getElementById('mobileOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function toggleDrawerKategori(btn) {
+      const list = document.getElementById('drawerKategoriList');
+      const chevron = btn.querySelector('.chevron');
+      const isOpen = list.classList.toggle('open');
+      chevron.style.transform = isOpen ? 'rotate(180deg)' : '';
+    }
+
+    const trigger = document.getElementById('kategoriTrigger');
+    const menu = document.getElementById('kategoriMenu');
+    trigger.addEventListener('click', e => {
+      e.preventDefault();
+      menu.classList.toggle('open');
+    });
+    document.addEventListener('click', e => {
+      if (!trigger.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('open');
+      }
+    });
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const nama = document.getElementById('nama').value;
+      const pesan = document.getElementById('pesan').value;
+      window.open(`https://wa.me/6281241514141?text=${encodeURIComponent(`Halo, saya ${nama}:\n${pesan}`)}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
