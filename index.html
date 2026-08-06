@@ -111,36 +111,23 @@
   <section class="hero">
     <p class="hero-tagline">Kebutuhan Tani Terpercaya</p>
     <div class="hero-banner">
-      <div class="hero-banner-placeholder">
-        <svg viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#b8d8b0"/>
-              <stop offset="100%" stop-color="#7ab870"/>
-            </linearGradient>
-          </defs>
-          <rect width="1200" height="480" fill="url(#skyGrad)"/>
-          <rect y="300" width="1200" height="180" fill="#5a8c40"/>
-          <rect y="320" width="1200" height="8" fill="#4a7a30" opacity="0.5"/>
-          <rect y="340" width="1200" height="8" fill="#4a7a30" opacity="0.5"/>
-          <rect y="360" width="1200" height="8" fill="#4a7a30" opacity="0.5"/>
-          <rect y="380" width="1200" height="8" fill="#4a7a30" opacity="0.5"/>
-          <ellipse cx="150" cy="295" rx="40" ry="30" fill="#3d6e25"/>
-          <ellipse cx="300" cy="290" rx="50" ry="35" fill="#4a8030"/>
-          <ellipse cx="450" cy="298" rx="35" ry="25" fill="#3d6e25"/>
-          <ellipse cx="600" cy="285" rx="55" ry="40" fill="#4a8030"/>
-          <ellipse cx="750" cy="292" rx="40" ry="30" fill="#3d6e25"/>
-          <ellipse cx="900" cy="288" rx="45" ry="35" fill="#4a8030"/>
-          <ellipse cx="1050" cy="295" rx="38" ry="28" fill="#3d6e25"/>
-          <rect x="740" y="200" width="22" height="80" rx="4" fill="#2a4a20"/>
-          <circle cx="751" cy="190" r="18" fill="#2a4a20"/>
-          <ellipse cx="770" cy="230" rx="18" ry="28" fill="#c8a060"/>
-          <path d="M760 240 Q720 260 700 290" stroke="#2a4a20" stroke-width="4" fill="none"/>
-          <ellipse cx="695" cy="295" rx="20" ry="8" fill="white" opacity="0.5"/>
-          <ellipse cx="680" cy="305" rx="25" ry="10" fill="white" opacity="0.4"/>
-          <rect x="0" y="440" width="1200" height="40" fill="rgba(0,0,0,0.2)"/>
-          <text x="600" y="466" text-anchor="middle" fill="white" font-size="14" font-family="DM Sans, sans-serif" opacity="0.7">Ganti dengan foto petani asli</text>
-        </svg>
+      <div class="hero-carousel" id="heroCarousel">
+        <div class="hero-carousel-track" id="heroTrack">
+          <img src="static/images/homepage/photo1.jpeg" alt="Tani Baru Mandiri" class="hero-slide" />
+          <img src="static/images/homepage/photo2.jpeg" alt="Tani Baru Mandiri" class="hero-slide" />
+          <img src="static/images/homepage/photo3.jpeg" alt="Tani Baru Mandiri" class="hero-slide" />
+        </div>
+        <button class="hero-carousel-btn prev" id="heroPrev" aria-label="Sebelumnya">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="hero-carousel-btn next" id="heroNext" aria-label="Berikutnya">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="hero-carousel-dots" id="heroDots">
+          <button class="hero-dot active" onclick="goToSlide(0)"></button>
+          <button class="hero-dot" onclick="goToSlide(1)"></button>
+          <button class="hero-dot" onclick="goToSlide(2)"></button>
+        </div>
       </div>
     </div>
   </section>
@@ -368,260 +355,6 @@
     </div>
 
     <div class="all-products-grid" id="productsGrid">
-
-      <div class="product-card" data-category="bibit" data-name="Cabai Keriting">
-        <div class="product-img-box">
-          <div class="product-img-inner">
-            <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" width="80" height="94">
-              <rect x="20" y="30" width="80" height="90" rx="8" fill="#d4967a"/>
-              <rect x="30" y="60" width="60" height="50" rx="4" fill="#e8b89a" opacity="0.6"/>
-              <text x="60" y="88" text-anchor="middle" font-size="9" fill="#8b4513" font-family="DM Sans">Chili Seeds</text>
-              <path d="M45 45 Q55 35 60 40 Q65 35 75 45" stroke="#c0392b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <rect x="35" y="20" width="50" height="14" rx="4" fill="#c4845e"/>
-              <rect x="45" y="14" width="30" height="8" rx="3" fill="#b0735a"/>
-            </svg>
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-name">Cabai Keriting</div>
-          <div class="product-price">Rp 150.000</div>
-          <div class="product-stock-note">Stok akan dikonfirmasi oleh admin</div>
-          <button class="btn-pesan" onclick="addToOrder('Cabai Keriting', 150000)">Pesan Sekarang</button>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="pupuk" data-name="NPK Lengkap 15-15-15">
-        <div class="product-img-box">
-          <div class="product-img-inner">
-            <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" width="80" height="94">
-              <rect x="15" y="25" width="90" height="100" rx="8" fill="#7ab870"/>
-              <rect x="25" y="55" width="70" height="60" rx="4" fill="#5a9a50" opacity="0.5"/>
-              <text x="60" y="82" text-anchor="middle" font-size="9" font-weight="bold" fill="#1a3a10" font-family="DM Sans">NPK</text>
-              <text x="60" y="96" text-anchor="middle" font-size="8" fill="#1a3a10" font-family="DM Sans">15-15-15</text>
-              <rect x="35" y="15" width="50" height="14" rx="4" fill="#60a055"/>
-              <rect x="45" y="8" width="30" height="10" rx="3" fill="#508a45"/>
-            </svg>
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-name">NPK Lengkap 15-15-15</div>
-          <div class="product-price">Rp 85.000</div>
-          <div class="product-stock-note">Stok akan dikonfirmasi oleh admin</div>
-          <button class="btn-pesan" onclick="addToOrder('NPK Lengkap 15-15-15', 85000)">Pesan Sekarang</button>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="bibit" data-name="Pumpkin Seed">
-        <div class="product-img-box">
-          <div class="product-img-inner">
-            <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" width="80" height="94">
-              <rect x="15" y="20" width="90" height="105" rx="6" fill="#6b8c6e"/>
-              <rect x="25" y="50" width="70" height="65" rx="4" fill="#7a9e7d" opacity="0.5"/>
-              <text x="60" y="78" text-anchor="middle" font-size="10" font-weight="bold" fill="#2d4a2e" font-family="DM Sans">PUMPKIN</text>
-              <text x="60" y="92" text-anchor="middle" font-size="10" font-weight="bold" fill="#2d4a2e" font-family="DM Sans">SEED</text>
-              <rect x="35" y="10" width="50" height="14" rx="4" fill="#5a7a5e"/>
-              <rect x="45" y="4" width="30" height="8" rx="3" fill="#4a6a4e"/>
-            </svg>
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-name">Pumpkin Seed</div>
-          <div class="product-price">Rp 120.000</div>
-          <div class="product-stock-note">Stok akan dikonfirmasi oleh admin</div>
-          <button class="btn-pesan" onclick="addToOrder('Pumpkin Seed', 120000)">Pesan Sekarang</button>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="bibit" data-name="Cabai Besar">
-        <div class="product-img-box">
-          <div class="product-img-inner">
-            <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" width="80" height="94">
-              <rect x="20" y="30" width="80" height="90" rx="8" fill="#d4967a"/>
-              <rect x="30" y="60" width="60" height="50" rx="4" fill="#e8b89a" opacity="0.6"/>
-              <text x="60" y="92" text-anchor="middle" font-size="9" fill="#8b4513" font-family="DM Sans">Chili Seeds</text>
-              <path d="M45 45 Q55 35 60 40 Q65 35 75 45" stroke="#c0392b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-              <rect x="35" y="20" width="50" height="14" rx="4" fill="#c4845e"/>
-              <rect x="45" y="14" width="30" height="8" rx="3" fill="#b0735a"/>
-            </svg>
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-name">Cabai Besar</div>
-          <div class="product-price">Rp 130.000</div>
-          <div class="product-stock-note">Stok akan dikonfirmasi oleh admin</div>
-          <button class="btn-pesan" onclick="addToOrder('Cabai Besar', 130000)">Pesan Sekarang</button>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="insektisida" data-name="BioShield Insektisida">
-        <div class="product-img-box">
-          <div class="product-img-inner">
-            <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" width="80" height="94">
-              <rect x="20" y="25" width="80" height="100" rx="8" fill="#e8c87a"/>
-              <rect x="30" y="55" width="60" height="60" rx="4" fill="#d4b055" opacity="0.5"/>
-              <text x="60" y="82" text-anchor="middle" font-size="8" font-weight="bold" fill="#6a4a00" font-family="DM Sans">BioShield</text>
-              <text x="60" y="95" text-anchor="middle" font-size="7" fill="#6a4a00" font-family="DM Sans">Insektisida</text>
-              <rect x="35" y="14" width="50" height="14" rx="4" fill="#d4aa55"/>
-              <rect x="45" y="8" width="30" height="9" rx="3" fill="#c49a45"/>
-            </svg>
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-name">BioShield Insektisida</div>
-          <div class="product-price">Rp 62.000</div>
-          <div class="product-stock-note">Stok akan dikonfirmasi oleh admin</div>
-          <button class="btn-pesan" onclick="addToOrder('BioShield Insektisida', 62000)">Pesan Sekarang</button>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="fungisida" data-name="FungiStop Pro">
-        <div class="product-img-box">
-          <div class="product-img-inner">
-            <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" width="80" height="94">
-              <rect x="20" y="25" width="80" height="100" rx="8" fill="#c87a7a"/>
-              <rect x="30" y="55" width="60" height="60" rx="4" fill="#b05555" opacity="0.5"/>
-              <text x="60" y="82" text-anchor="middle" font-size="8" font-weight="bold" fill="#4a1010" font-family="DM Sans">FungiStop</text>
-              <text x="60" y="95" text-anchor="middle" font-size="8" fill="#4a1010" font-family="DM Sans">Pro</text>
-              <rect x="35" y="14" width="50" height="14" rx="4" fill="#b86060"/>
-              <rect x="45" y="8" width="30" height="9" rx="3" fill="#a05050"/>
-            </svg>
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-name">FungiStop Pro</div>
-          <div class="product-price">Rp 55.000</div>
-          <div class="product-stock-note">Stok akan dikonfirmasi oleh admin</div>
-          <button class="btn-pesan" onclick="addToOrder('FungiStop Pro', 55000)">Pesan Sekarang</button>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="nutrisi" data-brand="semua" data-name="Minyak Mimba Pekat">
-        <div class="product-img-box">
-          <div class="product-img-inner">
-            <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" width="80" height="94">
-              <rect x="20" y="25" width="80" height="100" rx="8" fill="#9ab87a"/>
-              <rect x="30" y="55" width="60" height="60" rx="4" fill="#7a9a55" opacity="0.5"/>
-              <text x="60" y="80" text-anchor="middle" font-size="8" font-weight="bold" fill="#2a4a10" font-family="DM Sans">Minyak</text>
-              <text x="60" y="92" text-anchor="middle" font-size="8" fill="#2a4a10" font-family="DM Sans">Mimba</text>
-              <text x="60" y="104" text-anchor="middle" font-size="8" fill="#2a4a10" font-family="DM Sans">Pekat</text>
-              <rect x="35" y="14" width="50" height="14" rx="4" fill="#7a9855"/>
-              <rect x="45" y="8" width="30" height="9" rx="3" fill="#6a8845"/>
-            </svg>
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-name">Minyak Mimba Pekat</div>
-          <div class="product-price">Rp 90.000</div>
-          <div class="product-stock-note">Stok akan dikonfirmasi oleh admin</div>
-          <button class="btn-pesan" onclick="addToOrder('Minyak Mimba Pekat', 90000)">Pesan Sekarang</button>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="pupuk" data-name="Pupuk Kompos Organik">
-        <div class="product-img-box">
-          <div class="product-img-inner">
-            <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" width="80" height="94">
-              <rect x="20" y="25" width="80" height="100" rx="8" fill="#b8987a"/>
-              <rect x="30" y="55" width="60" height="60" rx="4" fill="#a07855" opacity="0.5"/>
-              <text x="60" y="80" text-anchor="middle" font-size="8" font-weight="bold" fill="#3a2a10" font-family="DM Sans">Kompos</text>
-              <text x="60" y="93" text-anchor="middle" font-size="8" fill="#3a2a10" font-family="DM Sans">Organik</text>
-              <rect x="35" y="14" width="50" height="14" rx="4" fill="#a88060"/>
-              <rect x="45" y="8" width="30" height="9" rx="3" fill="#987050"/>
-            </svg>
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-name">Pupuk Kompos Organik</div>
-          <div class="product-price">Rp 72.000</div>
-          <div class="product-stock-note">Stok akan dikonfirmasi oleh admin</div>
-          <button class="btn-pesan" onclick="addToOrder('Pupuk Kompos Organik', 72000)">Pesan Sekarang</button>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="bibit" data-brand="bisi" data-name="BISI 235 Macho">
-        <div class="product-img-box">
-          <div class="product-img-inner">
-            <img src="static/images/bisi/BISI_235_MACHO.png" alt="BISI 235 Macho" class="product-photo" />
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-name">BISI 235 Macho</div>
-          <div class="product-price">Rp —</div>
-          <div class="product-stock-note">Stok akan dikonfirmasi oleh admin</div>
-          <button class="btn-pesan" onclick="addToOrder('BISI 235 Macho', 0)">Pesan Sekarang</button>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="bibit" data-brand="bisi" data-name="BISI 959">
-        <div class="product-img-box">
-          <div class="product-img-inner">
-            <img src="static/images/bisi/bisi-959.png" alt="BISI 959" class="product-photo" />
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-name">BISI 959</div>
-          <div class="product-price">Rp —</div>
-          <div class="product-stock-note">Stok akan dikonfirmasi oleh admin</div>
-          <button class="btn-pesan" onclick="addToOrder('BISI 959', 0)">Pesan Sekarang</button>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="bibit" data-brand="bisi" data-name="Maskot BISI 234">
-        <div class="product-img-box">
-          <div class="product-img-inner">
-            <img src="static/images/bisi/maskot-bisi234.png" alt="Maskot BISI 234" class="product-photo" />
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-name">Maskot BISI 234</div>
-          <div class="product-price">Rp —</div>
-          <div class="product-stock-note">Stok akan dikonfirmasi oleh admin</div>
-          <button class="btn-pesan" onclick="addToOrder('Maskot BISI 234', 0)">Pesan Sekarang</button>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="bibit" data-brand="syngenta" data-name="NK 212 1kg">
-        <div class="product-img-box">
-          <div class="product-img-inner">
-            <img src="static/images/syngenta/nk212-1kg.png" alt="NK 212 1kg" class="product-photo" />
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-name">NK 212 1kg</div>
-          <div class="product-price">Rp —</div>
-          <div class="product-stock-note">Stok akan dikonfirmasi oleh admin</div>
-          <button class="btn-pesan" onclick="addToOrder('NK 212 1kg', 0)">Pesan Sekarang</button>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="bibit" data-brand="syngenta" data-name="NK 6172 Perkasa 1kg">
-        <div class="product-img-box">
-          <div class="product-img-inner">
-            <img src="static/images/syngenta/nk6172perkasa-1kg.png" alt="NK 6172 Perkasa 1kg" class="product-photo" />
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-name">NK 6172 Perkasa 1kg</div>
-          <div class="product-price">Rp —</div>
-          <div class="product-stock-note">Stok akan dikonfirmasi oleh admin</div>
-          <button class="btn-pesan" onclick="addToOrder('NK 6172 Perkasa 1kg', 0)">Pesan Sekarang</button>
-        </div>
-      </div>
-
-      <div class="product-card" data-category="bibit" data-brand="syngenta" data-name="NK 7328 Sumo 1kg">
-        <div class="product-img-box">
-          <div class="product-img-inner">
-            <img src="static/images/syngenta/nk7328sumo-1kg.png" alt="NK 7328 Sumo 1kg" class="product-photo" />
-          </div>
-        </div>
-        <div class="product-info">
-          <div class="product-name">NK 7328 Sumo 1kg</div>
-          <div class="product-price">Rp —</div>
-          <div class="product-stock-note">Stok akan dikonfirmasi oleh admin</div>
-          <button class="btn-pesan" onclick="addToOrder('NK 7328 Sumo 1kg', 0)">Pesan Sekarang</button>
-        </div>
-      </div>
-
     </div>
 
     <!-- Empty state -->
@@ -671,7 +404,99 @@
 
   <div class="cart-toast" id="cartToast"></div>
 
+  <!-- PRODUCT MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+  <div class="product-modal" id="productModal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Tutup">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <div class="modal-img-box" id="modalImg"></div>
+    <div class="modal-body">
+      <div class="modal-category-badge" id="modalBadge"></div>
+      <h2 class="modal-product-name" id="modalName"></h2>
+      <div class="modal-price" id="modalPrice"></div>
+      <div class="modal-desc" id="modalDesc"></div>
+      <button class="btn-pesan modal-btn-pesan" id="modalPesanBtn">Pesan Sekarang</button>
+    </div>
+  </div>
+
+  <!-- CART OVERLAY -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3>Keranjang Pesanan</h3>
+      <button class="cart-drawer-close" onclick="closeCart()" aria-label="Tutup">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M4 4h5l5.2 24h20.6l4-13H14" stroke="#ccc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="40" r="2.5" fill="#ccc"/><circle cx="34" cy="40" r="2.5" fill="#ccc"/></svg>
+        <p>Keranjang masih kosong</p>
+      </div>
+    </div>
+    <div class="cart-drawer-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total-row">
+        <span>Total</span>
+        <span id="cartTotal">Rp 0</span>
+      </div>
+      <p class="cart-note">* Harga akan dikonfirmasi oleh admin</p>
+      <button class="cart-checkout-btn" onclick="checkoutWhatsApp()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Pesan via WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <script src="static/products.js"></script>
+  <script src="static/descriptions.js"></script>
   <script>
+    // ── CATEGORY COLORS FOR DUMMY PLACEHOLDERS ──
+    const CAT_COLORS = {
+      bibit:       { bg: '#6b8c6e', fg: '#2d4a2e', cap: '#5a7a5e' },
+      pupuk:       { bg: '#7ab870', fg: '#1a3a10', cap: '#60a055' },
+      fungisida:   { bg: '#c87a7a', fg: '#4a1010', cap: '#b86060' },
+      herbisida:   { bg: '#e8c87a', fg: '#6a4a00', cap: '#d4aa55' },
+      insektisida: { bg: '#c8a07a', fg: '#4a2a00', cap: '#b88a55' },
+      nutrisi:     { bg: '#9ab87a', fg: '#2a4a10', cap: '#7a9855' },
+      alat:        { bg: '#7a9ab8', fg: '#1a2a4a', cap: '#5a7a9a' },
+      umum:        { bg: '#a0a8b0', fg: '#2a3040', cap: '#808898' },
+    };
+
+    function dummySVG(category, name) {
+      const c = CAT_COLORS[category] || CAT_COLORS.umum;
+      const label = name.length > 14 ? name.substring(0, 13) + '…' : name;
+      return `<svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" width="80" height="94">
+        <rect x="15" y="22" width="90" height="105" rx="8" fill="${c.bg}"/>
+        <rect x="25" y="52" width="70" height="65" rx="4" fill="${c.cap}" opacity="0.45"/>
+        <text x="60" y="82" text-anchor="middle" font-size="8" font-weight="bold" fill="${c.fg}" font-family="DM Sans,sans-serif">${label}</text>
+        <rect x="35" y="12" width="50" height="13" rx="4" fill="${c.cap}"/>
+        <rect x="45" y="5" width="30" height="9" rx="3" fill="${c.cap}" opacity="0.7"/>
+      </svg>`;
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById('productsGrid');
+      const fmtPrice = n => n > 0 ? 'Rp ' + n.toLocaleString('id-ID') : 'Rp —';
+      grid.innerHTML = PRODUCTS.map(p => {
+        const imgHTML = p.image
+          ? `<img src="${p.image}" alt="${p.nama}" class="product-photo" />`
+          : dummySVG(p.category, p.nama);
+        const safeN = p.nama.replace(/'/g, "\\'");
+        return `<div class="product-card" data-category="${p.category}" data-brand="${p.brand}" data-name="${p.nama}" onclick="openModal(PRODUCTS[${PRODUCTS.indexOf(p)}])" style="cursor:pointer;">
+          <div class="product-img-box"><div class="product-img-inner">${imgHTML}</div></div>
+          <div class="product-info">
+            <div class="product-name">${p.nama}</div>
+            <div class="product-price">${fmtPrice(p.harga)}</div>
+            <div class="product-stock-note">Stok akan dikonfirmasi oleh admin</div>
+            <button class="btn-pesan" onclick="event.stopPropagation(); addToOrder('${safeN}', ${p.harga})">Pesan Sekarang</button>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
     let cart = [];
     let activeCategory = 'semua';
     let activeBrand = 'semua';
@@ -752,18 +577,169 @@
 
     // ── CART ──
     function addToOrder(name, price) {
-      cart.push({ name, price });
+      const existing = cart.find(i => i.name === name);
+      if (existing) {
+        existing.qty++;
+      } else {
+        cart.push({ name, price, qty: 1 });
+      }
 
       const countEl = document.getElementById('cartCount');
-      countEl.textContent = cart.length;
+      countEl.textContent = cart.reduce((s, i) => s + i.qty, 0);
       countEl.classList.add('pulse');
       setTimeout(() => countEl.classList.remove('pulse'), 300);
+
+      renderCart();
 
       const toast = document.getElementById('cartToast');
       toast.textContent = `"${name}" ditambahkan ke keranjang`;
       toast.classList.add('show');
       setTimeout(() => toast.classList.remove('show'), 2500);
     }
+
+    function removeFromCart(name) {
+      cart = cart.filter(i => i.name !== name);
+      document.getElementById('cartCount').textContent = cart.reduce((s, i) => s + i.qty, 0);
+      renderCart();
+    }
+
+    function changeQty(name, delta) {
+      const item = cart.find(i => i.name === name);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) { removeFromCart(name); return; }
+      document.getElementById('cartCount').textContent = cart.reduce((s, i) => s + i.qty, 0);
+      renderCart();
+    }
+
+    function renderCart() {
+      const container = document.getElementById('cartItems');
+      const footer = document.getElementById('cartFooter');
+      const empty = document.getElementById('cartEmpty');
+
+      if (cart.length === 0) {
+        empty.style.display = 'flex';
+        footer.style.display = 'none';
+        container.innerHTML = '';
+        container.appendChild(empty);
+        return;
+      }
+
+      empty.style.display = 'none';
+      footer.style.display = 'block';
+
+      const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+      const hasUnpriced = cart.some(i => i.price === 0);
+
+      container.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-bottom">
+            <div class="cart-qty-ctrl">
+              <button onclick="changeQty('${item.name.replace(/'/g,"\\'")}', -1)">−</button>
+              <span>${item.qty}</span>
+              <button onclick="changeQty('${item.name.replace(/'/g,"\\'")}', 1)">+</button>
+            </div>
+            <div class="cart-item-price">${item.price > 0 ? 'Rp ' + (item.price * item.qty).toLocaleString('id-ID') : '—'}</div>
+            <button class="cart-item-remove" onclick="removeFromCart('${item.name.replace(/'/g,"\\'")}')">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('cartTotal').textContent = total > 0
+        ? 'Rp ' + total.toLocaleString('id-ID')
+        : 'Dikonfirmasi admin';
+
+      document.querySelector('.cart-note').style.display = hasUnpriced ? 'block' : 'none';
+    }
+
+    function openCart() {
+      document.getElementById('cartDrawer').classList.add('open');
+      document.getElementById('cartOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCart() {
+      document.getElementById('cartDrawer').classList.remove('open');
+      document.getElementById('cartOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function checkoutWhatsApp() {
+      if (cart.length === 0) return;
+      const lines = cart.map(i => `- ${i.name} x${i.qty}${i.price > 0 ? ' = Rp ' + (i.price * i.qty).toLocaleString('id-ID') : ''}`).join('\n');
+      const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+      const totalLine = total > 0 ? `\nTotal: Rp ${total.toLocaleString('id-ID')}` : '';
+      const msg = `Halo, saya ingin memesan:\n${lines}${totalLine}\n\nMohon konfirmasi stok dan harga. Terima kasih!`;
+      window.open(`https://wa.me/6281241514141?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    document.getElementById('cartBtn').addEventListener('click', openCart);
+
+    // ── PRODUCT MODAL ──
+    const CATEGORY_LABELS = {
+      bibit: 'Bibit', pupuk: 'Pupuk', fungisida: 'Fungisida',
+      herbisida: 'Herbisida', insektisida: 'Insektisida',
+      nutrisi: 'Nutrisi', alat: 'Alat Pertanian', umum: 'Umum',
+    };
+    const CATEGORY_COLORS = {
+      bibit: '#6b8c6e', pupuk: '#7ab870', fungisida: '#c87a7a',
+      herbisida: '#d4aa55', insektisida: '#c8a07a',
+      nutrisi: '#9ab87a', alat: '#7a9ab8', umum: '#a0a8b0',
+    };
+
+    function openModal(product) {
+      const desc = getDescription(product.nama);
+      const fmtPrice = n => n > 0 ? 'Rp ' + n.toLocaleString('id-ID') : 'Harga dikonfirmasi admin';
+
+      document.getElementById('modalName').textContent = product.nama;
+      document.getElementById('modalPrice').textContent = fmtPrice(product.harga);
+
+      const badge = document.getElementById('modalBadge');
+      badge.textContent = CATEGORY_LABELS[product.category] || product.category;
+      badge.style.background = (CATEGORY_COLORS[product.category] || '#aaa') + '22';
+      badge.style.color = CATEGORY_COLORS[product.category] || '#555';
+      badge.style.borderColor = (CATEGORY_COLORS[product.category] || '#aaa') + '66';
+
+      const imgBox = document.getElementById('modalImg');
+      imgBox.innerHTML = product.image
+        ? `<img src="${product.image}" alt="${product.nama}" />`
+        : dummySVG(product.category, product.nama);
+
+      const descBox = document.getElementById('modalDesc');
+      if (desc) {
+        descBox.innerHTML = `
+          <div class="modal-desc-row"><span class="modal-desc-label">Kegunaan</span><p>${desc.kegunaan}</p></div>
+          <div class="modal-desc-row"><span class="modal-desc-label">Bahan Aktif</span><p>${desc.bahan_aktif}</p></div>
+          <div class="modal-desc-row"><span class="modal-desc-label">Target</span><p>${desc.target}</p></div>
+          <div class="modal-desc-row"><span class="modal-desc-label">Cara Pakai</span><p>${desc.cara_pakai}</p></div>
+        `;
+      } else {
+        descBox.innerHTML = `<p class="modal-no-desc">Deskripsi belum tersedia.</p>`;
+      }
+
+      const safeN = product.nama.replace(/'/g, "\\'");
+      document.getElementById('modalPesanBtn').onclick = () => {
+        addToOrder(product.nama, product.harga);
+        closeModal();
+      };
+
+      document.getElementById('modalOverlay').classList.add('open');
+      document.getElementById('productModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('open');
+      document.getElementById('productModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') { closeModal(); closeCart(); }
+    });
 
     function capitalize(str) {
       return str.charAt(0).toUpperCase() + str.slice(1);
@@ -788,6 +764,25 @@
       const isOpen = list.classList.toggle('open');
       chevron.style.transform = isOpen ? 'rotate(180deg)' : '';
     }
+
+    renderProducts();
+
+    // ── HERO CAROUSEL ──
+    let heroIndex = 0;
+    const heroTotal = 3;
+    const track = document.getElementById('heroTrack');
+    const dots = document.querySelectorAll('.hero-dot');
+
+    function goToSlide(n) {
+      heroIndex = (n + heroTotal) % heroTotal;
+      track.style.transform = `translateX(-${heroIndex * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === heroIndex));
+    }
+
+    document.getElementById('heroPrev').onclick = () => goToSlide(heroIndex - 1);
+    document.getElementById('heroNext').onclick = () => goToSlide(heroIndex + 1);
+
+    setInterval(() => goToSlide(heroIndex + 1), 4000);
   </script>
 
 </body>
